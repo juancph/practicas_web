@@ -1,6 +1,6 @@
 export function crearHeader(){
     let header = document.createElement("header")
-    header.style.backgroundColor = "black"
+    header.style.backgroundColor = "transparent"
     header.style.position = "absolute"
     header.style.display = "flex"
     header.style.justifyContent = "space-between"
@@ -10,6 +10,7 @@ export function crearHeader(){
     header.style.width = "100%"
     
     header.appendChild(crearNav())
+    header.appendChild(crearLogo())
 
     return header
 }
@@ -17,10 +18,13 @@ export function crearHeader(){
 function crearNav() {
     const nav = document.createElement("nav");
     nav.style.height = "100%";
-    nav.style.width = "60%";
+    nav.style.width = "70%";
     nav.style.display = "flex";
-    nav.style.justifyContent = "space-between";
+    nav.style.justifyContent = "flex-end";
     nav.style.alignItems = "center";
+    nav.style.paddingRight = "30px"
+    nav.style.gap = "30px"
+    nav.style.position = "relative"
 
     const links = crearUrl();
 
@@ -47,4 +51,14 @@ function crearUrl() {
     });
 
     return links;
+}
+
+function crearLogo(){
+    let logo = document.createElement("img")
+    logo.src = "imagenes/logo.png"
+    logo.style.width = "180px"
+    logo.style.height = "80%"
+    logo.style.cursor = "pointer"
+
+    return logo
 }
